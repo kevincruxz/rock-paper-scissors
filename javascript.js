@@ -1,3 +1,5 @@
+game();
+
 function computerPlay() {
     let randomPick = Math.floor(Math.random() * 3) + 1;
     if (randomPick === 1) {
@@ -64,13 +66,16 @@ function game() {
         } else if (roundWinner === 2) {
             console.log("You Lose! " + computerSelection + " beats " + playerSelection);
             computerWinsCount++;
+        } else {
+            console.log("Incorrect weapon.")
+            i--;
         }
 
         if (playerWinsCount === 3) {
-            console.log("You have Winned the match! : )")
+            console.log("You have Winned the match! :)")
             break;
         } else if (computerWinsCount === 3) {
-            console.log("You have lost the match! : (")
+            console.log("You have lost the match! :(")
             break;
         }
     }
