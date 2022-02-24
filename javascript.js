@@ -13,31 +13,65 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === "rock") {
         if (computerSelection === "rock")
-            return "Tie!.";
+            return 1;
         if (computerSelection === "paper")
-            return "You Lose! Paper beats Rock.";
+            return 2;
         if (computerSelection === "scissors")
-            return "You Win! Rock beats Scissors";
+            return 0;
 
     } else if (playerSelection === "paper") {
 
         if (computerSelection === "rock")
-            return "You Win! Paper beats Rock";
+            return 0;
         if (computerSelection === "paper")
-            return "Tie!.";
+            return 1;
         if (computerSelection === "scissors")
-            return "You Lose! Scissors cuts Paper.";
+            return 2;
 
     } else if (playerSelection === "scissors") {
 
         if (computerSelection === "rock")
-            return "You Lose! Rock breaks Scissors";
+            return 2;
         if (computerSelection === "paper")
-            return "You Win! Scissors cuts Paper.";
+            return 0;
         if (computerSelection === "scissors")
-            return "Tie!.";
+            return 1;
 
+    }
+
+    else {
+        return -1;
     }
 }
 
-console.log(playRound("rock", computerPlay()))
+function game() {
+    let playerWinsCount = 0;
+    let computerWinsCount = 0;
+    let playerSelection, computerSelection;
+
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt("Choose your weapon (rock, paper, scissors)");
+        playerSelection.toLowerCase();
+        computerSelection = computerPlay();
+        roundWinner = playRound(playerSelection, computerSelection);
+
+        if (roundWinner === 0) {
+            console.log("You Win! " + playerSelection + " beats " + computerSelection);
+            playerWinsCount++;
+        } else if (roundWinner === 1) {
+            console.log("Tie!");
+            i--;
+        } else if (roundWinner === 2) {
+            console.log("You Lose! " + computerSelection + " beats " + playerSelection);
+            computerWinsCount++;
+        }
+
+        if (playerWinsCount === 3) {
+            console.log("You have Winned the match! : )")
+            break;
+        } else if (computerWinsCount === 3) {
+            console.log("You have lost the match! : (")
+            break;
+        }
+    }
+}
