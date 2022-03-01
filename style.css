@@ -1,0 +1,56 @@
+body {
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 1rem;
+}
+
+.results {
+    display: flex;
+    justify-content: space-around;
+}
+
+.election, .pc-election {
+    width: 8rem;
+    height: 8rem;
+    border: solid black 7px;
+}
+
+.election-div {
+    margin-top: 9rem;
+}
+
+.result {
+    width: 15rem;
+    height: 15rem;
+    border: solid black 7px;
+    margin-top: 5px;
+    margin-bottom: 2.5rem;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.sword, .shield, .crossbow {
+    width: 8rem;
+    display: flex;
+    padding: 12.5px;
+    margin: 10px;
+    margin-bottom: 18px;
+    border: solid black 10px;
+    transition: 0.07s;
+}
+
+.sword:hover, .shield:hover, .crossbow:hover{
+    background-color: aqua;
+    transform: scale(1.2);
+}
+
+h1 {
+    margin: 5px;
+}
