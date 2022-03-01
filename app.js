@@ -5,6 +5,9 @@ let img = document.createElement('img');
 const playerContainer = document.querySelector('.election');
 let selectionedWeapon = document.createElement('img');
 
+const resultContainer = document.querySelector('.result');
+let result = document.createElement('img');
+
 function initializer() {
 
     const selec = document.querySelectorAll('img');
@@ -55,6 +58,8 @@ function playRound(playerSelection, computerSelection) {
         selectionedWeapon.style.cssText = "width: 7rem; padding: 8px;";
         playerContainer.appendChild(selectionedWeapon);
 
+        selectionLightning();
+
         if (computerSelection === "sword")
             roundWinner = 0;
         else if (computerSelection === "shield")
@@ -67,6 +72,8 @@ function playRound(playerSelection, computerSelection) {
         selectionedWeapon.style.cssText = "width: 7rem; padding: 8px;";
         playerContainer.appendChild(selectionedWeapon);
 
+        selectionLightning();
+
         if (computerSelection === "sword")
             roundWinner = 1;
         else if (computerSelection === "shield")
@@ -78,6 +85,8 @@ function playRound(playerSelection, computerSelection) {
         selectionedWeapon.src = "images/crossbow.png";
         selectionedWeapon.style.cssText = "width: 7rem; padding: 8px;";
         playerContainer.appendChild(selectionedWeapon);
+
+        selectionLightning();
 
         if (computerSelection === "sword")
             roundWinner = 2;
@@ -99,9 +108,34 @@ function displayWinner(roundWinner) {
 
     if (roundWinner === 0) {
         text.textContent = "Tie";
+
+        result.src = "images/panas.jpg";
+        result.style.cssText = "width: 14rem; heigth: 14rem; margin-top: 50px";
+        resultContainer.appendChild(result);
     } else if (roundWinner === 1) {
         text.textContent = "You Win!";
+
+        result.src = "images/peepohappy.png";
+        result.style.cssText = "width: 14rem; heigth: 14rem; margin-top: 50px";
+        resultContainer.appendChild(result);
     } else if (roundWinner === 2) {
         text.textContent = "You Lose!";
+
+        result.src = "images/lose.png";
+        result.style.cssText = "width: 14rem; heigth: 14rem; margin-top: 50px";
+        resultContainer.appendChild(result);
     }
+}
+
+function selectionLightning () {
+    container.classList.add('toAddquire');
+    playerContainer.classList.add('toAddquire');
+
+    container.addEventListener('transitionend', lightningStop);
+    playerContainer.addEventListener('transitionend', lightningStop);
+}
+
+function lightningStop() {
+    container.classList.remove('toAddquire');
+    playerContainer.classList.remove('toAddquire')
 }
