@@ -32,7 +32,7 @@ body {
     height: 15rem;
     border: solid black 7px;
     margin-top: 5px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .options {
@@ -59,4 +59,32 @@ body {
 
 h1 {
     margin: 5px;
+}
+
+p {
+    margin: 5px;
+}
+
+.myButton {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #95bac7 5%, #408c99 100%);
+	background-color:#95bac7;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:21px;
+	font-weight:bold;
+	padding:14px 40px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #95bac7 100%);
+	background-color:#408c99;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
