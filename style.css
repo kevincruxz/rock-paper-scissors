@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .header {
@@ -32,14 +33,14 @@ body {
     height: 15rem;
     border: solid black 7px;
     margin-top: 5px;
-    margin-bottom: 2rem;
+    margin-bottom: 0.7rem;
 }
 
 .options {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 2rem;
+    margin-top: 0.7rem;
 }
 
 .sword, .shield, .crossbow {
@@ -87,4 +88,9 @@ p {
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.score {
+    font-weight: bolder;
+    font-size: 30px;
 }
